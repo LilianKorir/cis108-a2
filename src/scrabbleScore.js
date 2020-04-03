@@ -27,7 +27,7 @@ function scrabbleScore(word) {
   word = word.toLowerCase();
   let sum = 0;
   for (let i = 0; i < word.length; ++i) {
-    sum += SCRABBLE_TILE_SCORES[word.charAt(i)] || 0;
+    sum += SCRABBLE_TILE_SCORES[word.charAt(i)];
   }
 
   return sum;

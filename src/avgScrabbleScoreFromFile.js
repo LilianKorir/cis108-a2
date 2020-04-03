@@ -11,14 +11,15 @@ let scrabbleScore = require('./scrabbleScore');
  * sample-words.txt.
  */
 
+
 function avgScrabbleScoreFromFile(fileName) {
-  let array = fs.readFileSync(fileName).toString().split("\n");
+  let array = fs.readFileSync(fileName).toString().trimRight().split("\n");
   let arraySum = 0;
   for (let word of array) {
     arraySum += scrabbleScore(word);
   }
-  return (arraySum / (array.length - 1))
-
+  return (arraySum / (array.length))
+//return avgScrabbleScore(fs.readFileSync(fileName, 'utf8').trimRight().split('n'));
   // This is your job. :)
 }
 
